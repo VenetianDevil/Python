@@ -12,10 +12,7 @@ print("2.10\t" + str(len(words))) #wypisanie ilosci wyrazow
 
 #2.11 Podać sposób wyświetlania napisu word tak, aby jego znaki były rozdzielone znakiem podkreślenia.
 word = "word"
-print ("2.11\t" + word[0], end=''),
-for x in word[1:]:
-    print('_' + x, end=''),
-print()
+print("2.11\t" + "_".join(word))
 
 #2.12 Zbudować napis stworzony z pierwszych znaków wyrazów z wiersza line. Zbudować napis stworzony z ostatnich znaków wyrazów z wiersza line.
 print("2.12\t", end=''),

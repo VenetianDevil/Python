@@ -69,14 +69,14 @@ try:
 except ValueError:
     print "to nie jest liczba"
 
-def factoral(n):
+def factorial(n):
     s = i = 1
     while i <= n:
         s = s * i
         i=i+1
     return s
 
-print str(n) + "! = " + str(factoral(n))
+print str(n) + "! = " + str(factorial(n))
 
 #4.4
 reply = raw_input("4.4\tPodaj ktory wyraz ciagu fibonacciego obliczyc: ")

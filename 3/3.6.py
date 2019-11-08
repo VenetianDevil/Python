@@ -9,7 +9,6 @@ try:
     y = int(reply[2])
 except ValueError:
     print "bledne dane"
-# print str(x) + " " + str(y)
 kratki = "+"
 i = 0
 while i < x:

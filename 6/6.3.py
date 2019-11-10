@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-2 -*-
 # Kod testujący moduł.
-# from points import Point
 from rectangles import * 
 import unittest
 

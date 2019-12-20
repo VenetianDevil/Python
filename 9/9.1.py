@@ -57,7 +57,7 @@ class SingleList:
         # Zwraca cały węzeł, skraca listę.
         # Dla pustej listy rzuca wyjątek ValueError.
         if self.length == 0:
-            raise ValueError, "Pusta lista"
+            raise ValueError("Pusta lista")
         else:
             node = self.head
             if self.head == self.tail:
@@ -80,6 +80,7 @@ class SingleList:
         self.tail.next = other.head
         self.tail = other.tail
         self.length += other.length
+        other.clear()
 
     def clear(self):      # czyszczenie listy
         while self.head != self.tail:
@@ -98,11 +99,12 @@ blist = SingleList()
 blist.insert_head(Node(44))         
 blist.insert_head(Node(55))         
 blist.insert_tail(Node(66))         # [55, 44, 66]
-print "length", alist.length  # odczyt atrybutu
-print "length", alist.count() # wykorzystujemy interfejs
-# alist.clear()
+print ("length", alist.length)  # odczyt atrybutu
+print ("length", alist.count()) # wykorzystujemy interfejs
+
 alist.merge(blist)
-print "length", alist.length  # odczyt atrybutu
-while not alist.is_empty():   # kolejność 22, 11, 33
-    print "remove tail", alist.remove_tail()
-print "length", alist.length  # odczyt atrybutu
+print ("length", alist.length)  # odczyt atrybutu
+print (blist.is_empty())
+while not alist.is_empty():   # kolejność 22, 11, 33, 55, 44, 66
+    print ("remove tail", alist.remove_tail().data)
+print ("length", alist.length)  # odczyt atrybutu

@@ -1,4 +1,6 @@
 def factorial(n):
+    if n < 0:
+        return 
     s = i = 1
     while i <= n:
         s = s * i

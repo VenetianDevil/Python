@@ -17,7 +17,7 @@ def P(i, j):
                     P[a][b] = 1.0
                 else:
                     P[a][b] = 0.5 * (P[a-1][b] + P[a][b-1])
-    print P
+    print (P)
     return P[i][j]
 
     # if i == 0 and j == 0:
@@ -29,10 +29,10 @@ def P(i, j):
     # elif j > 0 and i > 0 :
     #     return 0.5 * (P(i-1, j) + P(i, j-1))
 
-print P(0, 0)
-print P(2, 0)
-print P(0, 2)
-print P(4, 2)
+print (P(0, 0))
+print (P(2, 0))
+print (P(0, 2))
+print (P(4, 2))
 
 # 0.5
 # 0.0   

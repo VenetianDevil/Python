@@ -13,7 +13,9 @@ class Node:
         return str(self.data)
 
     def insert(self, node):
-        if self.data < node.data:      # na prawo
+        if (self.data == None):
+            self.data = node.data
+        elif self.data < node.data:      # na prawo
             if self.right:
                 self.right.insert(node)
             else:
@@ -47,16 +49,16 @@ class Node:
 
 
 def bst_max(top):
-    if top.data == None and top.left == None and top.right == None:
-        raise ValueError, "Puste drzewo"
+    if top.data == None:
+        raise ValueError("Puste drzewo")
     else:
         while top.right != None:
             top = top.right
         return top
 
 def bst_min(top):
-    if top.data == None and top.left == None and top.right == None:
-        raise ValueError, "Puste drzewo"
+    if top.data == None:
+        raise ValueError("Puste drzewo")
     else:
         while top.left != None:
             top = top.left
@@ -64,17 +66,28 @@ def bst_min(top):
 
 tree = Node()
 try:
-    print bst_max(tree)
+    print (bst_max(tree))
 except ValueError:
-    print "Puste drzewo"
+    print ('puste drzewo')
     
-root = Node(3)
-tree.insert(root)
+tree.insert(Node(3))    
+try:
+    print (bst_max(tree))
+except ValueError:
+    print ('puste drzewo')
+    
 tree.insert(Node(4))
 tree.insert(Node(2))
 tree.insert(Node(7))
 tree.insert(Node(5))
 tree.insert(Node(1))
 
-print bst_max(root)
-print bst_min(root)
+try:
+    print (bst_max(tree))
+except ValueError:
+    print ('puste drzewo')
+
+try:
+    print (bst_min(tree))
+except ValueError:
+    print ('puste drzewo')

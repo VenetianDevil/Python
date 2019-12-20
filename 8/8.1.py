@@ -12,6 +12,6 @@ def solve1(a, b, c):
     y = -x / b
     OX = (x, 0)
     OY = (0, y)
-    print "Pozwiązanie to prosta przechodzaca przez " + str(OX) + " i " + str(OY)
+    print ("Pozwiązanie to prosta przechodzaca przez " + str(OX) + " i " + str(OY))
     
 solve1(1, 2, 3)

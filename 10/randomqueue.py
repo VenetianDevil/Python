@@ -23,9 +23,7 @@ class RandomQueue:
         else:
             index = int(random() * self.tail)
             node = self.items[index]
-            while self.items[index] != None:
-                self.items[index] = self.items[index+1]
-                index = (index + 1) % self.n
+            self.items[index] = self.items[self.tail-1]
             self.tail = (self.tail - 1) % self.n
             return node
 
@@ -55,4 +53,4 @@ class RandomQueue:
 # print queue.remove()
 # print queue.remove()
 # # zwrocilo kazdy losowo OK
-# # print queue.remove() //wyrzuca ze kolejka pusta OK
+# print queue.remove() #wyrzuca ze kolejka pusta OK

@@ -76,10 +76,16 @@ class SingleList:
 
             
     def merge(self, other):    # klasy O(1)
-        # Węzły z listy other są przepinane do listy self na jej koniec.
-        self.tail.next = other.head
-        self.tail = other.tail
-        self.length += other.length
+        if other.is_empty(): pass
+        elif self.is_empty():
+            self.head = other.head
+            self.tail = other.tail
+            self.length = other.length
+        else:
+            # Węzły z listy other są przepinane do listy self na jej koniec.
+            self.tail.next = other.head
+            self.tail = other.tail
+            self.length += other.length
         other.clear()
 
     def clear(self):      # czyszczenie listy
@@ -92,19 +98,25 @@ class SingleList:
 
 # Zastosowanie.
 alist = SingleList()
-alist.insert_head(Node(11))         # [11]
-alist.insert_head(Node(22))         # [22, 11]
-alist.insert_tail(Node(33))         # [22, 11, 33]
 blist = SingleList()
 blist.insert_head(Node(44))         
 blist.insert_head(Node(55))         
 blist.insert_tail(Node(66))         # [55, 44, 66]
+
+print ("length", alist.length)  # odczyt atrybutu
+alist.merge(blist)
+print ("length", alist.length)  # odczyt atrybutu
+print (blist.is_empty())
+
+alist.insert_head(Node(11))         # [11]
+alist.insert_head(Node(22))         # [22, 11]
+alist.insert_tail(Node(33))         # [22, 11, 33]
 print ("length", alist.length)  # odczyt atrybutu
 print ("length", alist.count()) # wykorzystujemy interfejs
 
 alist.merge(blist)
 print ("length", alist.length)  # odczyt atrybutu
 print (blist.is_empty())
-while not alist.is_empty():   # kolejność 22, 11, 33, 55, 44, 66
+while not alist.is_empty():   # kolejność 33, 66, 44, 55, 11, 22
     print ("remove tail", alist.remove_tail().data)
 print ("length", alist.length)  # odczyt atrybutu

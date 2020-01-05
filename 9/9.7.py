@@ -13,9 +13,7 @@ class Node:
         return str(self.data)
 
     def insert(self, node):
-        if (self.data == None):
-            self.data = node.data
-        elif self.data < node.data:      # na prawo
+        if self.data < node.data:      # na prawo
             if self.right:
                 self.right.insert(node)
             else:
@@ -49,7 +47,7 @@ class Node:
 
 
 def bst_max(top):
-    if top.data == None:
+    if top == None:
         raise ValueError("Puste drzewo")
     else:
         while top.right != None:
@@ -57,20 +55,19 @@ def bst_max(top):
         return top
 
 def bst_min(top):
-    if top.data == None:
+    if top == None:
         raise ValueError("Puste drzewo")
     else:
         while top.left != None:
             top = top.left
         return top
 
-tree = Node()
 try:
-    print (bst_max(tree))
+    print (bst_max(None))
 except ValueError:
     print ('puste drzewo')
     
-tree.insert(Node(3))    
+tree = Node(3)    
 try:
     print (bst_max(tree))
 except ValueError:

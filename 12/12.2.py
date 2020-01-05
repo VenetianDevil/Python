@@ -9,7 +9,7 @@ def bin_search(L, l, r, y):
     if( L[middle] == y):
         return middle
     elif (l>r):
-        raise ValueError("List don't contain wanted value")
+        raise ValueError("List doesn't contain required value")
     elif (L[middle] > y):
         return bin_search(L, l, middle-1, y)
     else:

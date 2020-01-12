@@ -18,5 +18,13 @@ def create_List(n, k):
         L[i] = int(random()*k)
     return L
 
-L = create_List(100, 10)
-print (linear_search(L, 0, 99, 5))
+n=100
+k=10
+i=0
+y = int(random()*k)
+L = create_List(n, k)
+print (L)
+print (y)
+while i != None and i < n-1:
+    i = linear_search(L, i+1, n-1, y)
+    print (i)

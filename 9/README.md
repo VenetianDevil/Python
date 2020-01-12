@@ -11,5 +11,5 @@
 * 9.1
     * Uwzględnienie w merge() pustej listy 'a' i pustej listy'b'
 * 9.7
-    * Pute drzewo traktowane jako 'None', a nie Node bezdanych (top == None)
+    * Pute drzewo traktowane jako 'None', a nie Node bez danych (top == None)
     * usunięcie wczęsniej dodatnego warunku na pusty węzeł w funkcji Insert()
